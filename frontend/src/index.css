@@ -1,0 +1,155 @@
+:root {
+  --color-puple: rgb(156, 70, 221);
+  --color-orange: rgb(186, 111, 12);
+  --color-gold: rgb(237, 210, 59);
+  --color-black: #000;
+  --color-red: #861010;
+  --color-white: #fff;
+  --color-grey: rgb(125, 125, 125);
+  --color-grey-ish: #ccc;
+}
+
+body {
+  background-color: var(--color-black);
+}
+
+.text-center {
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 3rem;
+}
+
+.text-center h1 {
+  margin-top: 1rem;
+  color: var(--color-red);
+}
+
+.text-center h5 {
+  margin: 0;
+  color: var(--color-white);
+  font-size: 1.5rem;
+}
+
+.text-center .letter-gold {
+  font-size: 2rem;
+  color: var(--color-gold);
+}
+
+.text-center .letter-orange {
+  color: var(--color-orange);
+  font-size: 2rem;
+}
+
+.text-center .letter-purple {
+  color: var(--color-puple);
+  font-size: 2rem;
+}
+
+.text-center .small-gold {
+  color: var(--color-gold);
+}
+
+.text-center .small-orange {
+  color: var(--color-orange);
+}
+
+.text-center .small-purple {
+  color: var(--color-puple);
+}
+
+.text-center p {
+  font-size: 1.3rem;
+  color: var(--color-grey);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 10px;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  perspective: 2000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: var(--color-grey-ish);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.green-card .card-back {
+  background-color: var(--color-orange);
+}
+
+.blue-card .card-back {
+  background-color: var(--color-puple);
+}
+
+.yellow-card .card-back {
+  background-color: var(--color-gold);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .text-center {
+    font-size: 0.7rem;
+    margin-top: 0;
+  }
+}
+
+@keyframes inflate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.title {
+  animation: inflate 3s infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    animation: none; 
+  }
+}
