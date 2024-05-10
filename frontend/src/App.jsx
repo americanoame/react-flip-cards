@@ -1,8 +1,10 @@
-
+import TextCenter from './components/TextCenter'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <TextCenter title="ATTENTION! You do not need JS for everything!" />
+    </div>
   )
 }
 
